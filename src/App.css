@@ -4,28 +4,67 @@ ul {
   padding: 0;
 }
 
-.App {
-  text-align: center;
+table {
+  width: 100%;
 }
 
-.App-logo {
-  height: 8vmin;
+.logo {
+  height: 5vmin;
 }
 
-.App-header {
+.header {
   background-color: #dddddd;
-  min-height: 50px;
   display: flex;
   align-items: center;
-  padding: 5vmin 2rem;
+  padding: 3vmin 2rem;
+  border-bottom: 3px solid #a3a3a3;
 }
 
-.App-link {
-  color: #61dafb;
+.main {
+  display: flex;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.content {
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
+.date {
+  width: 45px;
+}
+
+.green {
+  background-color: #007f0e;
+}
+
+@media screen and (max-width: 400px) {
+  .menu a {
+    text-align: center;
+    float: none;
+  }
 }
 
 @media only screen and (max-width: 550px) {
-  .App-header {
+  .header {
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .menu {
+    flex-direction: row;
+    padding: 1rem;
   }
 }
