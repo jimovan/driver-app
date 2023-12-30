@@ -1,39 +1,43 @@
 import data from './data/drivers.json';
-
-const getTotalMinutes = (array) => {
-
-    let totalMinutes = 0;
-
-    array.forEach(activity => {
-        totalMinutes += activity.activity.reduce((accumulator, currentValue) => accumulator + currentValue.duration, 0)
-    });
-
-    return totalMinutes;
-}
-
-const hasActivityForDate = (array, date) => {
-
-    if (array.some(e => e.date === date)) {
-        return 'date green'
-    }
-
-    return 'date';
-}
-
-const searchDrivers = (event) => {
-
-    let searchText = event.target.value;
-
-    console.log('searchText: ' + searchText);
-
-    let results = data.data.filter((driver) => {
-        return driver.vehicleRegistration.includes(searchText)
-    });
-
-    console.log(results);
-}
+import { useState } from 'react';
 
 const DriverReport = () => {
+
+    const [drivers, setDrivers] = useState(data.data);
+
+    const searchDrivers = (event) => {
+
+        let searchText = event.target.value.toLowerCase();
+
+        let results = data.data.filter((driver) => {
+            return driver.forename.toLowerCase().includes(searchText) ||
+                driver.surname.toLowerCase().includes(searchText) ||
+                driver.vehicleRegistration.toLowerCase().includes(searchText)
+        });
+
+        setDrivers(results);
+    }
+
+    const getTotalMinutes = (array) => {
+
+        let totalMinutes = 0;
+
+        array.forEach(activity => {
+            totalMinutes += activity.activity.reduce((accumulator, currentValue) => accumulator + currentValue.duration, 0)
+        });
+
+        return totalMinutes;
+    }
+
+    const hasActivityForDate = (array, date) => {
+
+        if (array.some(e => e.date === date)) {
+            return 'date green'
+        }
+
+        return 'date';
+    }
+
     return (
         <div>
 
@@ -58,7 +62,7 @@ const DriverReport = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.data.map((driver) =>
+                    {drivers.map((driver) =>
                         <tr key={driver.driverID}>
                             <td>{`${driver.forename} ${driver.surname}`}</td>
                             <td>{driver.vehicleRegistration}</td>
