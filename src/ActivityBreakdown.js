@@ -30,11 +30,13 @@ const ActivityBreakdown = (props) => {
     const breakdowns = getActivityBreakdown(props.traces);
 
     return (
-        <div className="activity--breakdown">
-            {breakdowns.map((breakdown, index) => <div key={index}>
-                <span>{breakdown.Name}: </span>
-                <span className="activity--total">{breakdown.Total}</span>
-            </div>)}
+        <div className='activity--breakdown'>
+            {breakdowns.map((breakdown, index) =>
+                <div key={index} className='activity--item' data-item-type={breakdown.Name.toLowerCase()}>
+                    <span>{breakdown.Name}: </span>
+                    <span className='activity--total'>{breakdown.Total}</span>
+                </div>
+            )}
         </div>
     );
 }

@@ -29,15 +29,17 @@ const DriverReport = () => {
                     <input type='text' id='search' className='input--search' onChange={searchDrivers} placeholder='filter by driver name or reg' ></input>
                 </div>
             </form>
-            <br />
 
             <div className='driver--container'>
                 {drivers.map((driver) =>
                     <div className='driver--panel' key={driver.driverID}>
-                        <div className='driver--info'>
+                        {/* <div className='driver--info'>
                             <span>{`${driver.forename} ${driver.surname}`}</span>
                             <span>{driver.vehicleRegistration}</span>
-                        </div>
+                        </div> */}
+
+                        <span>{`${driver.forename} ${driver.surname}`}</span>
+                        <span>{driver.vehicleRegistration}</span>
 
                         {/* <ActivityTotal traces={driver.traces} /> */}
                         <ActivityBreakdown traces={driver.traces} />
