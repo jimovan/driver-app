@@ -24,8 +24,10 @@ const DriverReport = () => {
     return (
         <>
             <form>
-                <label htmlFor='search' className='label--search'>Search:</label>
-                <input type='text' id='search' className='input--search' onChange={searchDrivers} placeholder='filter by driver name or reg' ></input>
+                <div className='search--group'>
+                    <label htmlFor='search' className='label--search'>Search:</label>
+                    <input type='text' id='search' className='input--search' onChange={searchDrivers} placeholder='filter by driver name or reg' ></input>
+                </div>
             </form>
             <br />
 
