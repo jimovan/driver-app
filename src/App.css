@@ -7,7 +7,7 @@
   align-items: center;
   padding: 1.5rem 2rem;
   background-color: #ffffff;
-  border-bottom: 3px solid #1d1d1d;
+  border-bottom: 3px solid #373736;
 }
 
 .logo {
@@ -22,10 +22,18 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  color: #ffffff;
-  background-color: #1d1d1d;
+  background-color: #373736;
   padding: 2rem;
   width: 150px;
+}
+
+.menu a {
+  color: #ffffff;
+}
+
+.menu a.active {
+  color: #DD201D;
+  text-decoration: underline;
 }
 
 .menu a:hover {
