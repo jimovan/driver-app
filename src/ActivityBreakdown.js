@@ -34,7 +34,7 @@ const ActivityBreakdown = (props) => {
             {breakdowns.map((breakdown, index) =>
                 <div key={index} className='activity--item' data-item-type={breakdown.Name.toLowerCase()}>
                     <span>{breakdown.Name}: </span>
-                    <span className='activity--total'>{breakdown.Total}</span>
+                    <span className='activity--total bold'>{breakdown.Total}</span>
                 </div>
             )}
         </div>

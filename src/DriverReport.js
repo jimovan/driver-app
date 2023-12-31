@@ -1,6 +1,5 @@
 import ActivityBreakdown from './ActivityBreakdown';
-import ActivityGrid from './ActivityGrid';
-// import ActivityTotal from './ActivityTotal';
+import ActivityDateGrid from './ActivityDateGrid';
 import data from './data/drivers.json';
 import { useState } from 'react';
 
@@ -33,17 +32,10 @@ const DriverReport = () => {
             <div className='driver--container'>
                 {drivers.map((driver) =>
                     <div className='driver--panel' key={driver.driverID}>
-                        {/* <div className='driver--info'>
-                            <span>{`${driver.forename} ${driver.surname}`}</span>
-                            <span>{driver.vehicleRegistration}</span>
-                        </div> */}
-
-                        <span>{`${driver.forename} ${driver.surname}`}</span>
-                        <span>{driver.vehicleRegistration}</span>
-
-                        {/* <ActivityTotal traces={driver.traces} /> */}
+                        <span className='bold'>{`${driver.forename} ${driver.surname}`}</span>
+                        <span >{driver.vehicleRegistration}</span>
                         <ActivityBreakdown traces={driver.traces} />
-                        <ActivityGrid traces={driver.traces} />
+                        <ActivityDateGrid traces={driver.traces} />
                     </div>
                 )}
             </div>

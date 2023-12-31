@@ -1,3 +1,7 @@
+.bold {
+  font-weight: 700;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -72,6 +76,10 @@
   box-shadow: 0px 2px 5px #373736;
 }
 
+.driver--panel:hover {
+  border: 2px solid #DD201D;
+}
+
 .driver--info {
   display: flex;
   justify-content: space-between;
@@ -108,13 +116,16 @@
   --item-color: hsl(0, 100%, 84%);
 }
 
-.activity--total {
-  font-weight: 700;
-}
-
 .activity--grid {
   display: flex;
   gap: 10px;
+}
+
+.activity--date {
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+  font-size: 12px;
 }
 
 .date {
@@ -128,57 +139,16 @@
   background-color: hsl(126, 100%, 24%, .6);
 }
 
-@media screen and (max-width: 400px) {
-  .menu a {
-    text-align: center;
-    float: none;
-  }
-}
-
-@media only screen and (max-width: 550px) {
-  .header {
-    justify-content: center;
-  }
-}
-
-@media screen and (max-width: 700px) {
-
-  .header {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    border: none;
-  }
-
-  .logo {
-    height: 2rem;
-  }
-
-  .main {
-    flex-direction: column;
-  }
-
-  .menu {
-    flex-direction: row;
-    justify-content: center;
-    padding: 1rem;
-    width: auto;
-  }
-
-  .content {
-    justify-items: center;
-  }
-
-  .input--search {
-    width: 100%;
-  }
-
-  .driver--panel {
-    grid-auto-columns: 1fr;
-    grid-auto-flow: unset;
-  }
-}
-
 @media screen and (max-width: 1210px) {
+
+  html,
+  body,
+  #root,
+  .app,
+  .main {
+    height: auto;
+  }
+
   .driver--panel {
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto;
@@ -217,4 +187,60 @@
     grid-row: 3/4;
   }
 
+}
+
+@media screen and (max-width: 700px) {
+
+  .header {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border: none;
+  }
+
+  .logo {
+    height: 2rem;
+  }
+
+  .main {
+    flex-direction: column;
+  }
+
+  .menu {
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem;
+    width: auto;
+  }
+
+  .content {
+    align-items: center;
+  }
+
+  .driver--panel {
+    grid-auto-columns: 1fr;
+    grid-auto-flow: unset;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .header {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+
+  .input--search {
+    width: 100%;
+  }
+
+  .driver--panel {
+    grid-auto-columns: 1fr;
+    grid-auto-flow: unset;
+  }
+
+  .activity--breakdown {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
 }
