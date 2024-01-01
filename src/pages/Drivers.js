@@ -1,5 +1,5 @@
-import DriverOverview from "./DriverOverview";
-import data from './data/drivers.json';
+import DriverOverview from "../DriverOverview";
+import data from '../data/drivers.json';
 
 const Drivers = () => {
 

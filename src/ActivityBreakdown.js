@@ -7,14 +7,28 @@ const ActivityBreakdown = (props) => {
             { Name: 'Drive', Total: 0 },
             { Name: 'Rest', Total: 0 },
             { Name: 'Work', Total: 0 }
-        ]
+        ];
+
+        // let breakdowns = [];
+
+        // array.forEach(activity => {
+
+        //     let uniqueTypes = [... new Set(activity.activity.map(x => x.type ))];
+
+        //     breakdowns = [...new Set(uniqueTypes.map(x => ({
+        //         Name: x,
+        //         Total: 0
+        //     })))];
+        // });
+
+        // console.log(breakdowns);
 
         array.forEach(activity => {
 
             breakdowns.forEach(bd => {
                 bd.Total += activity.activity.reduce((accumulator, currentValue) => {
 
-                    if (currentValue.type === bd.Name.toLowerCase()) {
+                    if (currentValue.type === bd.Name) {
                         return accumulator + currentValue.duration;
                     }
 
