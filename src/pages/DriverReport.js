@@ -1,17 +1,15 @@
-import DriverOverview from './DriverOverview';
-import data from './data/drivers.json';
+import DriverOverview from '../DriverOverview';
+import * as DriverService from '../services/driverService';
 import { useState } from 'react';
 
 const DriverReport = () => {
 
-    const [drivers, setDrivers] = useState(data.data);
+    const [drivers, setDrivers] = useState(DriverService.getDrivers());
 
     const searchDrivers = (event) => {
-
         let searchText = event.target.value.toLowerCase();
 
-        let results = data.data.filter((driver) => {
-
+        let results = DriverService.getDrivers().filter((driver) => {
             let driverName = `${driver.forename} ${driver.surname}`.toLowerCase();
 
             return driverName.includes(searchText) ||
@@ -20,25 +18,6 @@ const DriverReport = () => {
 
         setDrivers(results);
     }
-
-    let uniqueTypes = [];
-
-    drivers.forEach(driver => {
-        if (driver.traces.length > 0) {
-            driver.traces.forEach(trace => {
-                let types = [...new Set(trace.activity.map(act => act.type))];
-                uniqueTypes = [...new Set([...uniqueTypes, ...types])];
-            })
-        }
-    });
-
-    let breakdowns = uniqueTypes.map(type => ({
-        Name: type,
-        Total: 0
-    }));
-
-    console.log(breakdowns);
-
 
     return (
         <>

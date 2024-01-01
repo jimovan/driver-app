@@ -16,7 +16,7 @@ const ActivityTotal = (props) => {
     return (
         <div>
             <span>Total: </span>
-            <span className="activity--total">{getTotalMinutes(traces)}</span>
+            <span className='activity--total'>{getTotalMinutes(traces)}</span>
         </div>
     );
 }

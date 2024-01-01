@@ -1,35 +1,13 @@
+import * as DriverService from './services/driverService';
+
 const ActivityDateGrid = (props) => {
 
-    const dates = [
-        {
-            Date: '2021-02-01',
-            Day: 'Mon'
-        },
-        {
-            Date: '2021-02-02',
-            Day: 'Tue'
-        },
-        {
-            Date: '2021-02-03',
-            Day: 'Wed'
-        },
-        {
-            Date: '2021-02-04',
-            Day: 'Thu'
-        },
-        {
-            Date: '2021-02-05',
-            Day: 'Fri'
-        },
-        {
-            Date: '2021-02-06',
-            Day: 'Sat'
-        },
-        {
-            Date: '2021-02-07',
-            Day: 'Sun'
-        }
-    ];
+    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+    const dates = DriverService.getActivityDates().map((date, index) => ({
+        Date: date,
+        Day: days[index]
+    }));
 
     const traces = props.traces;
 

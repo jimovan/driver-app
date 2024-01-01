@@ -1,27 +1,15 @@
+import * as DriverService from './services/driverService';
+
 const ActivityBreakdown = (props) => {
 
     const getActivityBreakdown = (array) => {
 
-        let breakdowns = [
-            { Name: 'Available', Total: 0 },
-            { Name: 'Drive', Total: 0 },
-            { Name: 'Rest', Total: 0 },
-            { Name: 'Work', Total: 0 }
-        ];
-
-        // let breakdowns = [];
-
-        // array.forEach(activity => {
-
-        //     let uniqueTypes = [... new Set(activity.activity.map(x => x.type ))];
-
-        //     breakdowns = [...new Set(uniqueTypes.map(x => ({
-        //         Name: x,
-        //         Total: 0
-        //     })))];
-        // });
-
-        // console.log(breakdowns);
+        let breakdowns = DriverService.getActivityTypes().map(type => (
+            {
+                Name: type,
+                Total: 0
+            }
+        ));
 
         array.forEach(activity => {
 
@@ -41,7 +29,7 @@ const ActivityBreakdown = (props) => {
         return breakdowns;
     }
 
-    const breakdowns = getActivityBreakdown(props.traces);
+    const breakdowns = getActivityBreakdown(props.traces, props.br);
 
     return (
         <div className='activity--breakdown'>

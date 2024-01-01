@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './Header';
 import NavMenu from './NavMenu';
-import DriverReport from './DriverReport';
+import DriverReport from './pages/DriverReport';
 import Drivers from './pages/Drivers';
 import About from './pages/About';
 import Vehicles from './pages/Vehicles';
