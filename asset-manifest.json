@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/driver-app/static/css/main.37873b7b.css",
+    "main.js": "/driver-app/static/js/main.271fc77a.js",
+    "static/media/logo.png": "/driver-app/static/media/logo.51c60a49170feac13203.png",
+    "index.html": "/driver-app/index.html",
+    "main.37873b7b.css.map": "/driver-app/static/css/main.37873b7b.css.map",
+    "main.271fc77a.js.map": "/driver-app/static/js/main.271fc77a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.37873b7b.css",
+    "static/js/main.271fc77a.js"
+  ]
+}
