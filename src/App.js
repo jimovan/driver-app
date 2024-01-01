@@ -10,7 +10,7 @@ import Vehicles from './pages/Vehicles';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div className='app'>
         <Header />
         <div className='main'>
