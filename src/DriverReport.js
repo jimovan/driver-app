@@ -12,8 +12,10 @@ const DriverReport = () => {
         let searchText = event.target.value.toLowerCase();
 
         let results = data.data.filter((driver) => {
-            return driver.forename.toLowerCase().includes(searchText) ||
-                driver.surname.toLowerCase().includes(searchText) ||
+
+            let driverName = `${driver.forename} ${driver.surname}`.toLowerCase();
+
+            return driverName.includes(searchText) ||                
                 driver.vehicleRegistration.toLowerCase().includes(searchText)
         });
 
