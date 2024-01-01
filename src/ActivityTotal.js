@@ -21,6 +21,4 @@ const ActivityTotal = (props) => {
     );
 }
 
-
-
 export default ActivityTotal;
