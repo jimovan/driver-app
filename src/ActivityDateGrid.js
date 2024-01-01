@@ -44,8 +44,8 @@ const ActivityDateGrid = (props) => {
 
     return (
         <div className='activity--grid'>
-            {dates.map((date) =>
-                <div class='activity--date' key={date}>
+            {dates.map((date, index) =>
+                <div className='activity--date' key={index}>
                     <span>{date.Day}</span>
                     <span className={hasActivityForDate(traces, date.Date)}></span>
                 </div>

@@ -1,5 +1,4 @@
-import ActivityBreakdown from './ActivityBreakdown';
-import ActivityDateGrid from './ActivityDateGrid';
+import DriverOverview from './DriverOverview';
 import data from './data/drivers.json';
 import { useState } from 'react';
 
@@ -33,12 +32,7 @@ const DriverReport = () => {
 
             <div className='driver--container'>
                 {drivers.map((driver) =>
-                    <div className='driver--panel' key={driver.driverID}>
-                        <span className='bold'>{`${driver.forename} ${driver.surname}`}</span>
-                        <span >{driver.vehicleRegistration}</span>
-                        <ActivityBreakdown traces={driver.traces} />
-                        <ActivityDateGrid traces={driver.traces} />
-                    </div>
+                    <DriverOverview key={driver.driverID} driver={driver}/>
                 )}
             </div>
 
